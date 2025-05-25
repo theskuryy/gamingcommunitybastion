@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GamingCommunityBastion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Russo One', sans-serif;
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+    }
+    header, footer {
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #00ffcc;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .telegram-button {
+      background-color: #0088cc;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .support {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GamingCommunityBastion</h1>
+    <nav>
+      <a href="#home">Главная</a>
+      <a href="#about">О нас</a>
+      <a href="#services">Услуги</a>
+      <a href="#demo">Демо</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Добро пожаловать!</h2>
+    <p>Проект серверов по игре Counter-Strike: Source. Присоединяйся к нам и почувствуй настоящий соревновательный дух!</p>
+  </section>
+
+  <section id="about">
+    <h2>О нас</h2>
+    <p>Мы — команда энтузиастов, создающая лучшие игровые сервера для CS:S с упором на честную игру, стабильность и качественную техподдержку.</p>
+  </section>
+
+  <section id="services">
+    <h2>Услуги</h2>
+    <ul>
+      <li>Игровые сервера CS:S с тикрейтом 100</li>
+      <li>Аренда сервера и админки</li>
+      <li>Регулярные турниры и ивенты</li>
+    </ul>
+  </section>
+
+  <section id="demo">
+    <h2>Демо</h2>
+    <p>Смотреть запись матчей и живые трансляции:</p>
+    <a class="telegram-button" href="#">Открыть HLTV</a>
+  </section>
+
+  <section id="contact">
+    <h2>Контакты</h2>
+    <p>Связаться с нами:</p>
+    <a class="telegram-button" href="https://t.me/theskuryy" target="_blank">Написать в Telegram</a>
+    <div class="support">
+      Нужна помощь? Поддержка 24/7 через Telegram и Discord.
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GamingCommunityBastion. Все права защищены.</p>
+  </footer>
+</body>
+</html>
