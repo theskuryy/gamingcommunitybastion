@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GamingCommunityBastion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Russo One', sans-serif;
+      background: #0c0c0c;
+      color: #eee;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      z-index: 1000;
+      border-bottom: 2px solid #00ffcc;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    .logo span {
+      font-size: 24px;
+      letter-spacing: 2px;
+      color: #00ffcc;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      font-size: 16px;
+      padding: 6px 10px;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 6px;
+    }
+    nav a:hover {
+      background-color: #00ffcc;
+      color: #111;
+    }
+    #home {
+      height: 100vh;
+      background: url('https://i.imgur.com/jqj1JfL.jpg') center center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      margin-top: 70px;
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+    #home::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(12,12,12,0.85);
+      z-index: 0;
+    }
+    #home > * {
+      position: relative;
+      z-index: 1;
+    }
+    #home h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      letter-spacing: 4px;
+    }
+    #home p {
+      font-size: 20px;
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    #home a.cta-btn {
+      background-color: #00ffcc;
+      color: #111;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      box-shadow: 0 0 15px #00ffcc;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+    #home a.cta-btn:hover {
+      background-color: #00ccb3;
+    }
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px 60px 20px;
+    }
+    section h2 {
+      color: #00ffcc;
+      font-size: 28px;
+      margin-bottom: 18px;
+      border-left: 6px solid #00ffcc;
+      padding-left: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    section p, section ul {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #ccc;
+    }
+    section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    section ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    section ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #00ffcc;
+    }
+    .telegram-button {
+      display: inline-block;
+      background-color: #0088cc;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      box-shadow: 0 0 8px #0088cc;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    .telegram-button:hover {
+      background-color: #005f88;
+    }
+    .support {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 18px 10px;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #222;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      header {
+        justify-content: space-between;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 28px;
+        color: #00ffcc;
+      }
+      nav.active {
+        display: flex;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        border-radius: 8px;
+        padding: 12px 20px;
+        width: 180px;
+        box-shadow: 0 0 15px #00ffcc;
+      }
+      nav.active a {
+        margin: 12px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <!-- Логотип рыцаря здесь будет -->
+    <img src="https://i.imgur.com/fAjqZLy.png" alt="Bastion Logo" />
+    <span>BASTION</span>
+  </div>
+  <div class="menu-toggle" id="menuToggle">&#9776;</div>
+  <nav id="navMenu">
+    <a href="#home">Главная</a>
+    <a href="#about">О нас</a>
+    <a href="#services">Услуги</a>
+    <a href="#demo">Демо</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
+
+<section id="home">
+  <h1>GamingCommunityBastion</h1>
+  <p>Проект серверов по игре Counter-Strike: Source. Присоединяйся к настоящему бою гладиаторов спецназа и террористов!</p>
+  <a href="#contact" class="cta-btn">Связаться через Telegram</a>
+</section>
+
+<section id="about">
+  <h2>О нас</h2>
+  <p>Мы — команда профессионалов и энтузиастов CS:S, создаём стабильные игровые серверы с честной игрой и поддержкой 24/7.</p>
+</section>
+
+<section id="services">
+  <h2>Услуги</h2>
+  <ul>
+    <li>Игровые сервера CS:S с тикрейтом 100</li>
+    <li>Аренда слотов и админки</li>
+    <li>Регулярные турниры и ивенты</li>
+  </ul>
+</section>
+
+<section id="demo">
+  <h2>Демо</h2>
+  <p>Смотри записи матчей и живые трансляции на HLTV.</p>
+  <a href="#" class="telegram-button">Открыть HLTV</a>
+</section>
+
+<section id="contact">
+  <h2>Контакты</h2>
+  <p>Написать нам в Telegram:</p>
+  <a href="https://t.me/theskuryy" target="_blank" class="telegram-button">Telegram @theskuryy</a>
+  <div class="support">
+    Техническая поддержка 24/7 через Telegram и Discord.
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 GamingCommunityBastion. Все права защищены.</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
